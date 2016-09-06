@@ -1,6 +1,7 @@
 # Supported tags and respective `Dockerfile` links
 
-  * [`1`, `1.8`, `1.8.0`, `latest` (Dockerfile)](https://github.com/wernight/docker-compose/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
+  * [`latest` (Dockerfile)](https://github.com/wernight/docker-compose/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
+  * [`1`, `1.8`, `1.8.0`, (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.8.0/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.8.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
   * [`1.7`, `1.7.1` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.7.1/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.7.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
 
 
