@@ -17,7 +17,11 @@ RUN set -x && \
     # https://docs.docker.com/compose/install/
     curl -Lo /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.8.0/docker-compose-Linux-x86_64 && \
     chmod a+rx /usr/local/bin/docker-compose && \
+    \
+    # Basic check it works
     docker-compose version && \
     \
     # Clean-up
     apk del .deps
+    
+ENTRYPOINT ["/usr/local/bin/docker-compose"]
