@@ -15,7 +15,7 @@ RUN set -x && \
     \
     # Install docker-compose
     # https://docs.docker.com/compose/install/
-    curl -Lo /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.8.0/docker-compose-Linux-x86_64 && \
+    curl -Lo /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.7.1/docker-compose-Linux-x86_64 && \
     chmod a+rx /usr/local/bin/docker-compose && \
     \
     # Basic check it works
