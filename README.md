@@ -9,7 +9,7 @@
 
 ## What is `docker-compose`
 
-[`docker-compose`](https://docs.docker.com/compose/) is useful during development and to simplify building and running linked Docker images.
+[Docker Compose](https://docs.docker.com/compose/) is useful during development and to simplify building and running linked Docker images.
 
 ## Usage example
 
@@ -20,9 +20,23 @@
 
   - **Entrypoint** is `docker-compose` so do **not** run `wernight/docker-compose docker-compose`.
   - `/code` is the default current working directory.
-  - You can **run as any user**, for example as yourself by adding `--user $UID`.
+  - You can **run as any user**, for example as yourself by adding `--user $UID:$GID`.
 
 Note: You should use a `docker-compose` version that is compatible with your `docker` version.
+
+### Alias
+
+You may setup an alias to run this is if you were running `docker-compose` directly.
+Here is a function that works for Bash/ZSH:
+
+    function docker-compose() {
+      DIRNAME=$"$(basename \"$PWD\")"
+      docker run --rm -it \
+        -v /var/run/docker.sock:/var/run/docker.sock:ro \
+        -w "/$DIRNAME" -v "$PWD":"/$DIRNAME":ro \
+        wernight/docker-compose "$@"
+    }
+
 
 ## Feedbacks
 
