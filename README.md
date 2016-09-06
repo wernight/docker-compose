@@ -3,6 +3,8 @@
   * [`latest` (Dockerfile)](https://github.com/wernight/docker-compose/blob/master/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
   * [`1`, `1.8`, `1.8.0`, (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.8.0/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.8.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
   * [`1.7`, `1.7.1` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.7.1/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.7.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
+  * [`1.6`, `1.6.2` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.6.2/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.6.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
+  * [`1.5`, `1.5.2` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.5.2/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.5.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
 
 
 ## What is `docker-compose`
