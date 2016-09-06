@@ -23,5 +23,8 @@ RUN set -x && \
     \
     # Clean-up
     apk del .deps
-    
+
+VOLUME /code
+WORKDIR /code
+
 ENTRYPOINT ["/usr/local/bin/docker-compose"]

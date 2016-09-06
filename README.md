@@ -7,6 +7,15 @@
 
 [`docker-compose`](https://docs.docker.com/compose/) is useful during development and to simplify building and running linked Docker images.
 
+## Usage example
+
+    $ docker run -v /var/run/docker.sock:/var/run/docker.sock:ro -v $PWD:/code:ro --rm wernight/docker-compose build
+
+  - `/code` is the default current working directory.
+  - You can run as any user, for example as yourself by adding `--user $UID`.
+
+Note: You should use a `docker-compose` version that is compatible with your `docker` version.
+
 ## Feedbacks
 
 Suggestions are welcome on our [GitHub issue tracker](https://github.com/wernight/docker-compose/issues).
