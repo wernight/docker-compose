@@ -13,10 +13,14 @@
 
 ## Usage example
 
-    $ docker run -v /var/run/docker.sock:/var/run/docker.sock:ro -v $PWD:/code:ro --rm wernight/docker-compose build
+    $ docker run --rm \
+        -v /var/run/docker.sock:/var/run/docker.sock:ro \
+        -v $PWD:/code:ro \
+        wernight/docker-compose build
 
+  - **Entrypoint** is `docker-compose` so do **not** run `wernight/docker-compose docker-compose`.
   - `/code` is the default current working directory.
-  - You can run as any user, for example as yourself by adding `--user $UID`.
+  - You can **run as any user**, for example as yourself by adding `--user $UID`.
 
 Note: You should use a `docker-compose` version that is compatible with your `docker` version.
 
