@@ -27,9 +27,9 @@ Note: You should use a `docker-compose` version that is compatible with your `do
 ### Alias
 
 You may setup an alias to run this is if you were running `docker-compose` directly.
-Here is a function that works for Bash/ZSH:
+Here is a function that works for Bash/ZSH (except the name, it's POSIX-compatible):
 
-    function docker-compose() {
+    docker-compose () {
       DIRNAME=$"$(basename \"$PWD\")"
       docker run --rm -it \
         -v /var/run/docker.sock:/var/run/docker.sock:ro \
