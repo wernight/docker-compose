@@ -13,11 +13,12 @@
 
 ## Usage example
 
+```bash
     $ docker run --rm \
         -v /var/run/docker.sock:/var/run/docker.sock:ro \
         -v $PWD:/code:ro \
         wernight/docker-compose build
-
+```
   - **Entrypoint** is `docker-compose` so do **not** run `wernight/docker-compose docker-compose`.
   - `/code` is the default current working directory.
   - You can **run as any user**, for example as yourself by adding `--user $UID:$GID`.
@@ -29,6 +30,7 @@ Note: You should use a `docker-compose` version that is compatible with your `do
 You may setup an alias to run this is if you were running `docker-compose` directly.
 Here is a function that works for Bash/ZSH (except the name, it's POSIX-compatible):
 
+```bash
     docker-compose () {
       DIRNAME=$"$(basename \"$PWD\")"
       docker run --rm -it \
@@ -36,7 +38,15 @@ Here is a function that works for Bash/ZSH (except the name, it's POSIX-compatib
         -w "/$DIRNAME" -v "$PWD":"/$DIRNAME":ro \
         wernight/docker-compose "$@"
     }
+```
 
+## Building new versions
+
+If you want a newer version of [Docker Compose](https://docs.docker.com/compose/) build your own by the following example.
+
+```bash
+$ docker build --build-arg DOCKER_COMPOSE_VERSION=1.10 -t wernight/docker-compose .
+```
 
 ## Feedbacks
 

@@ -16,12 +16,15 @@ RUN set -x && \
     # Clean-up
     apk del .deps
 
+ARG DOCKER_COMPOSE_VERSION
+
 RUN set -x && \
     apk add --no-cache -t .deps ca-certificates curl && \
     # Install docker-compose
     # https://docs.docker.com/compose/install/
-    DOCKER_COMPOSE_URL=https://github.com$(curl -L https://github.com/docker/compose/releases/latest | grep -Eo 'href="[^"]+docker-compose-Linux-x86_64' | sed 's/^href="//') && \
-    curl -Lo /usr/local/bin/docker-compose $DOCKER_COMPOSE_URL && \
+    DOCKER_COMPOSE_LATEST=$(curl -L https://github.com/docker/compose/releases/latest | grep -Eo 'href=\"[^"]+docker-compose-Linux-x86_64' | sed 's/^href="//' | grep -Eo '\d+.\d+.\d+') && \
+    DOCKER_COMPOSE_VERSION=${DOCKER_COMPOSE_VERSION:-$DOCKER_COMPOSE_LATEST} && \
+    curl -L https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64 > /usr/local/bin/docker-compose && \
     chmod a+rx /usr/local/bin/docker-compose && \
     \
     # Basic check it works
