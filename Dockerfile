@@ -11,7 +11,7 @@ RUN set -x && \
     curl -Lo glibc-bin.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-bin-$GLIBC_VERSION.apk && \
     apk update && \
     apk add glibc.apk glibc-bin.apk && \
-    rm -rf /var/cache/apk/* glibc.apk glibkc-bin.apk && \
+    rm -rf /var/cache/apk/* glibc.apk glibc-bin.apk && \
     \
     # Clean-up
     apk del .deps
