@@ -6,6 +6,7 @@
   * [`1.6`, `1.6.2` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.6.2/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.6.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
   * [`1.5`, `1.5.2` (Dockerfile)](https://github.com/wernight/docker-compose/blob/v1.5.2/Dockerfile) [![](https://images.microbadger.com/badges/image/wernight/docker-compose:1.5.svg)](https://microbadger.com/images/wernight/docker-compose "Get your own image badge on microbadger.com")
 
+Note: This is similar to [docker/compose](https://hub.docker.com/r/docker/compose/) image, but this image is based on Alpine on an auto-build.
 
 ## What is `docker-compose`
 
