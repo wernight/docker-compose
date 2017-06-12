@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.6
 
 RUN set -x && \
     apk add --no-cache -t .deps ca-certificates curl && \
@@ -11,7 +11,8 @@ RUN set -x && \
     curl -Lo glibc-bin.apk https://github.com/sgerrand/alpine-pkg-glibc/releases/download/$GLIBC_VERSION/glibc-bin-$GLIBC_VERSION.apk && \
     apk update && \
     apk add glibc.apk glibc-bin.apk && \
-    rm -rf /var/cache/apk/* glibc.apk glibc-bin.apk && \
+    rm -rf /var/cache/apk/* && \
+    rm glibc.apk glibc-bin.apk && \
     \
     # Clean-up
     apk del .deps
