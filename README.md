@@ -14,10 +14,12 @@ Note: This is similar to [docker/compose](https://hub.docker.com/r/docker/compos
 
 ## Usage example
 
-    $ docker run --rm \
-        -v /var/run/docker.sock:/var/run/docker.sock:ro \
-        -v $PWD:/code:ro \
-        wernight/docker-compose build
+```bash
+$ docker run --rm \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    -v $PWD:/code:ro \
+    wernight/docker-compose build
+```
 
   - **Entrypoint** is `docker-compose` so do **not** run `wernight/docker-compose docker-compose`.
   - `/code` is the default current working directory.
@@ -30,13 +32,15 @@ Note: You should use a `docker-compose` version that is compatible with your `do
 You may setup an alias to run this is if you were running `docker-compose` directly.
 Here is a function that works for Bash/ZSH (except the name, it's POSIX-compatible):
 
-    docker-compose () {
-      DIRNAME=$"$(basename \"$PWD\")"
-      docker run --rm -it \
-        -v /var/run/docker.sock:/var/run/docker.sock:ro \
-        -w "/$DIRNAME" -v "$PWD":"/$DIRNAME":ro \
-        wernight/docker-compose "$@"
-    }
+```bash
+docker-compose () {
+  DIRNAME=$"$(basename \"$PWD\")"
+  docker run --rm -it \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    -w "/$DIRNAME" -v "$PWD":"/$DIRNAME":ro \
+    wernight/docker-compose "$@"
+}
+```
 
 
 ## Feedbacks
