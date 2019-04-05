@@ -12,12 +12,13 @@ RUN set -x && \
     apk del --purge .deps
 
 # Required for docker-compose to find zlib.
-ENV LD_LIBRARY_PATH=/lib
+ENV LD_LIBRARY_PATH=/lib:/usr/lib
 
 RUN set -x && \
     apk add --no-cache -t .deps ca-certificates && \
-    apk add --no-cache zlib && \
-    # Install docker-compose
+    # Required dependencies.
+    apk add --no-cache zlib libgcc && \
+    # Install docker-compose.
     # https://docs.docker.com/compose/install/
     DOCKER_COMPOSE_URL=https://github.com$(wget -q -O- https://github.com/docker/compose/releases/latest | grep -Eo 'href="[^"]+docker-compose-Linux-x86_64' | sed 's/^href="//' | head -1) && \
     wget -q -O /usr/local/bin/docker-compose $DOCKER_COMPOSE_URL && \
